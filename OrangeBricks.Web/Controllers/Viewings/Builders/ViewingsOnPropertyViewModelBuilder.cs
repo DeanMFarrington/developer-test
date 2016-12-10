@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using OrangeBricks.Web.Controllers.Offers.ViewModels;
+using OrangeBricks.Web.Controllers.Viewings.ViewModels;
 using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web.Controllers.Viewings.Builders
@@ -15,25 +15,24 @@ namespace OrangeBricks.Web.Controllers.Viewings.Builders
             _context = context;
         }
 
-        /*
-        public OffersOnPropertyViewModel Build(int id)
+        public ViewingsOnPropertyViewModel Build(int id)
         {
             var property = _context.Properties
                 .Where(p => p.Id == id)
-                .Include(x => x.Offers)
+                .Include(x => x.Viewings)
                 .SingleOrDefault();
 
-            var offers = property.Offers ?? new List<Offer>();
+            var viewings = property.Viewings ?? new List<Viewing>();
 
-            return new OffersOnPropertyViewModel
+            return new ViewingsOnPropertyViewModel
             {
-                HasOffers = offers.Any(),
-                Offers = offers.Select(x => new OfferViewModel
+                HasViewings = viewings.Any(),
+                Viewings = viewings.Select(x => new ViewingViewModel
                 {
                     Id = x.Id,
-                    Amount = x.Amount,
+                    ViewingDate = x.ViewingDate,
                     CreatedAt = x.CreatedAt,
-                    IsPending = x.Status == OfferStatus.Pending,
+                    IsPending = x.Status == ViewingStatus.Pending,
                     Status = x.Status.ToString()
                 }),
                 PropertyId = property.Id,
@@ -42,6 +41,5 @@ namespace OrangeBricks.Web.Controllers.Viewings.Builders
                 NumberOfBedrooms = property.NumberOfBedrooms
             };
         }
-        */
     }
 }

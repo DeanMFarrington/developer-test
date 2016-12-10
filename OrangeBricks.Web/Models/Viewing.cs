@@ -10,7 +10,7 @@ namespace OrangeBricks.Web.Models
 
         public ViewingStatus Status { get; set; }
 
-        public DateTime DateOfViewing { get; set; }
+        public DateTime ViewingDate { get; set; }
 
         public DateTime CreatedAt { get; set; }
 

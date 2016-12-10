@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using OrangeBricks.Web.Controllers.Offers.ViewModels;
+using OrangeBricks.Web.Controllers.Viewings.ViewModels;
 using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web.Controllers.Viewings.Builders
@@ -15,27 +15,26 @@ namespace OrangeBricks.Web.Controllers.Viewings.Builders
             _context = context;
         }
 
-        /*
-        public MyOffersViewModel Build(string buyerId)
+        public MyViewingsViewModel Build(string buyerId)
         {
             var properties = _context.Properties
-                .Include(y => y.Offers)
-                .Where(x => x.Offers.Any(y => y.BuyerId == buyerId))
+                .Include(y => y.Viewings)
+                .Where(x => x.Viewings.Any(y => y.BuyerId == buyerId))
                 .ToList();
 
-            var offersOnProperties = new List<OffersOnPropertyViewModel>();
+            var viewingsOnProperties = new List<ViewingsOnPropertyViewModel>();
 
             foreach (var property in properties)
             {
-                var offersOnPropertyViewModel = new OffersOnPropertyViewModel
+                var viewingsOnPropertyViewModel = new ViewingsOnPropertyViewModel
                 {
-                    HasOffers = true,
-                    Offers = property.Offers.Select(x => new OfferViewModel
+                    HasViewings = true,
+                    Viewings = property.Viewings.Select(x => new ViewingViewModel
                     {
                         Id = x.Id,
-                        Amount = x.Amount,
+                        ViewingDate = x.ViewingDate,
                         CreatedAt = x.CreatedAt,
-                        IsPending = x.Status == OfferStatus.Pending,
+                        IsPending = x.Status == ViewingStatus.Pending,
                         Status = x.Status.ToString()
                     }),
                     PropertyId = property.Id,
@@ -43,15 +42,14 @@ namespace OrangeBricks.Web.Controllers.Viewings.Builders
                     StreetName = property.StreetName,
                     NumberOfBedrooms = property.NumberOfBedrooms
                 };
-                offersOnProperties.Add(offersOnPropertyViewModel);
+                viewingsOnProperties.Add(viewingsOnPropertyViewModel);
             }
 
-            return new MyOffersViewModel
+            return new MyViewingsViewModel()
             {
-                HasOffers = offersOnProperties.Any(),
-                Properties = offersOnProperties
+                HasViewings = viewingsOnProperties.Any(),
+                Viewings = viewingsOnProperties
             };
         }
-        */
     }
 }
