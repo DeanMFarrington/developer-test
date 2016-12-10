@@ -1,0 +1,20 @@
+﻿@model OrangeBricks.Web.Controllers.Offers.ViewModels.MyOffersViewModel
+    
+@{
+    ViewBag.Title = "My Offers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (Model.HasOffers)
+{
+    foreach (var property in Model.Properties)
+    {
+        foreach (var offer in property.Offers)
+        {
+            // TODO Formatting. See OnProperty.cshtml.
+            <p>@property.StreetName</p>
+        }
+    }
+}
