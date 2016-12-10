@@ -198,6 +198,11 @@
     <Compile Include="Controllers\Property\ViewModels\MyPropertiesViewModel.cs" />
     <Compile Include="Controllers\Property\ViewModels\PropertiesViewModel.cs" />
     <Compile Include="Controllers\Property\ViewModels\PropertyViewModel.cs" />
+    <Compile Include="Controllers\Viewings\Builders\MyViewingsViewModelBuilder.cs" />
+    <Compile Include="Controllers\Viewings\Builders\ViewingsOnPropertyViewModel.cs" />
+    <Compile Include="Controllers\Viewings\ViewingsController.cs" />
+    <Compile Include="Controllers\Viewings\ViewModels\MyViewingsViewModel.cs" />
+    <Compile Include="Controllers\Viewings\ViewModels\ViewingsOnPropertyViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -242,6 +247,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Offer.cs" />
     <Compile Include="Models\Property.cs" />
+    <Compile Include="Models\Viewing.cs" />
+    <Compile Include="Models\ViewingStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -302,6 +309,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Viewings\Commands\" />
+    <Folder Include="Views\Viewings\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
