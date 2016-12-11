@@ -12,8 +12,7 @@
 
 @if (Model.HasViewings)
 {
-    /*
-    foreach (var property in Model.Properties)
+    foreach (var property in Model.Viewings)
     {
         <hr />
         <h3>@property.StreetName</h3>
@@ -21,22 +20,21 @@
         <p><strong>Number of bedrooms:</strong> @property.NumberOfBedrooms</p>
         <p><strong>Street name:</strong> @property.StreetName</p>
 
-        int offerCount = @property.Offers.Count();
-        string offerString = (offerCount == 1) ? "offer" : "offers";
+        int viewingCount = @property.Viewings.Count();
+        string viewingString = (viewingCount == 1) ? "viewing" : "viewings";
 
-        <p>You currently have @offerCount @offerString on this property.</p>
+        <p>You currently have @viewingCount @viewingString on this property.</p>
 
-        foreach (var offer in property.Offers)
+        foreach (var viewing in property.Viewings)
         {
             <hr />
             <div>
-                <p><strong>Offer Amount: </strong> £@offer.Amount</p>
-                <p><strong>Offer Made At: </strong> @offer.CreatedAt.ToLongTimeString() on @offer.CreatedAt.ToShortDateString()</p>
-                <p><strong>Status: </strong> @offer.Status</p>
+                <p><strong>Date Requested: </strong> @viewing.ViewingDate</p>
+                <p><strong>Request Made At: </strong> @viewing.CreatedAt.ToLongTimeString() on @viewing.CreatedAt.ToShortDateString()</p>
+                <p><strong>Status: </strong> @viewing.Status</p>
             </div>
         }
     }
-    */
 }
 else
 {
