@@ -239,9 +239,9 @@
     <Compile Include="Migrations\201505101607236_AddFieldsToOffers.Designer.cs">
       <DependentUpon>201505101607236_AddFieldsToOffers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612102045582_AddBuyerIdToOffers.cs" />
-    <Compile Include="Migrations\201612102045582_AddBuyerIdToOffers.Designer.cs">
-      <DependentUpon>201612102045582_AddBuyerIdToOffers.cs</DependentUpon>
+    <Compile Include="Migrations\201612111735322_AddViewingsTable.cs" />
+    <Compile Include="Migrations\201612111735322_AddViewingsTable.Designer.cs">
+      <DependentUpon>201612111735322_AddViewingsTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -343,8 +343,8 @@
     <EmbeddedResource Include="Migrations\201505101607236_AddFieldsToOffers.resx">
       <DependentUpon>201505101607236_AddFieldsToOffers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612102045582_AddBuyerIdToOffers.resx">
-      <DependentUpon>201612102045582_AddBuyerIdToOffers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612111735322_AddViewingsTable.resx">
+      <DependentUpon>201612111735322_AddViewingsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
