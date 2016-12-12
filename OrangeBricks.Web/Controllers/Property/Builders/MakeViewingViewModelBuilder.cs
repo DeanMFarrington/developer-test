@@ -22,7 +22,6 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
                 PropertyId = property.Id,
                 PropertyType = property.PropertyType,
                 StreetName = property.StreetName,
-                // TODO How should ViewingDate be set?
                 ViewingDate = DateTime.Now
             };
         }
